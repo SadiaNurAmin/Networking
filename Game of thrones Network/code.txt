@@ -1,0 +1,1424 @@
+NORTH
+
+Router>enable
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#ip route 20.50.0.0 255.255.0.0 10.10.40.1
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+C    192.168.0.0/16 is directly connected, FastEthernet1/0
+
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#
+
+ROCK(rip)
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#no auto-summary
+Router(config-router)#network 10.10.10.0
+Router(config-router)#network 20.20.0.0
+Router(config-router)#pas
+% Incomplete command.
+Router(config-router)#pas
+Router(config-router)#passive-interface  gi
+Router(config-router)#passive-interface  gigabitEthernet 0/0
+%Invalid interface type and number
+Router(config-router)#passive-interface  fa
+Router(config-router)#passive-interface  fastEthernet 0/0
+Router(config-router)#copy
+Router(config-router)#copy run
+Router(config-router)#copy running-config st
+Router(config-router)#copy running-config startup-config
+                      ^
+% Invalid input detected at '^' marker.
+	
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy 
+Router#copy r
+Router#copy running-config st
+Router#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+Router#
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router>enable
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface FastEthernet0/0
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface FastEthernet0/0
+Router(config-if)#ip address 200.168.0.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface Serial2/0
+Router(config-if)#ip address 10.10.40.2 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+%LINK-5-CHANGED: Interface Serial2/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial2/0, changed state to up
+
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/24 is subnetted, 1 subnets
+C       10.10.40.0 is directly connected, Serial2/0
+     20.0.0.0/16 is subnetted, 1 subnets
+S       20.50.0.0 [1/0] via 10.10.40.1
+C    192.168.0.0/16 is directly connected, FastEthernet1/0
+C    200.168.0.0/24 is directly connected, FastEthernet0/0
+
+Router#
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router>show ip routw
+                   ^
+% Invalid input detected at '^' marker.
+	
+Router>show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/24 is subnetted, 1 subnets
+C       10.10.40.0 is directly connected, Serial2/0
+     20.0.0.0/16 is subnetted, 1 subnets
+S       20.50.0.0 [1/0] via 10.10.40.1
+C    192.168.0.0/16 is directly connected, FastEthernet1/0
+C    200.168.0.0/24 is directly connected, FastEthernet0/0
+
+VALE:
+
+% Invalid input detected at '^' marker.
+	
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     20.0.0.0/16 is subnetted, 1 subnets
+C       20.50.0.0 is directly connected, FastEthernet0/0
+
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#
+Router(config)#router rip
+Router(config-router)#
+Router(config-router)#end
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router(config)#ip dhcp pool MOUNTAIN-POOL
+Router(dhcp-config)#network 20.60.0.0 255.255.0.0
+Router(dhcp-config)#default-router 10.10.50.2
+Router(dhcp-config)#exit
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router>enable
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface se2/3
+%Invalid interface type and number
+Router(config)#interface se2/0
+Router(config-if)#ip address 10.10.30.2 255.255.255.0
+Router(config-if)#no shutdown
+
+%LINK-5-CHANGED: Interface Serial2/0, changed state to down
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface se3/0
+Router(config-if)#ip address 10.10.40.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface Serial3/0, changed state to up
+
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial3/0, changed state to up
+
+Router#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface Serial2/0
+Router(config-if)#ip address 10.10.30.2 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#
+%LINK-5-CHANGED: Interface Serial2/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial2/0, changed state to up
+
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/24 is subnetted, 2 subnets
+C       10.10.30.0 is directly connected, Serial2/0
+C       10.10.40.0 is directly connected, Serial3/0
+     20.0.0.0/16 is subnetted, 1 subnets
+C       20.50.0.0 is directly connected, FastEthernet0/0
+S    192.168.0.0/16 [1/0] via 10.10.40.2
+                    is directly connected, Serial2/0
+
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip dhcp pool STORM-POOL
+Router(dhcp-config)#network 20.40.0.0 255.255.0.0
+Router(dhcp-config)#default-router 20.40.0.1
+Router(dhcp-config)#exit
+Router(config)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router rip
+Router(config-router)#
+Router(config-router)#end
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface FastEthernet0/0
+Router(config-if)#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router(config-if)#exit
+Router(config)#router rip
+Router(config-router)#network 20.20.0.0
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface FastEthernet0/0
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#router rip
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/24 is subnetted, 2 subnets
+C       10.10.30.0 is directly connected, Serial2/0
+C       10.10.40.0 is directly connected, Serial3/0
+     20.0.0.0/16 is subnetted, 1 subnets
+C       20.50.0.0 is directly connected, FastEthernet0/0
+S    192.168.0.0/16 [1/0] via 10.10.40.2
+                    is directly connected, Serial2/0
+
+Router#
+
+MOUNTAIN
+
+System Bootstrap, Version 12.1(3r)T2, RELEASE SOFTWARE (fc1)
+Copyright (c) 2000 by cisco Systems, Inc.
+PT 1001 (PTSC2005) processor (revision 0x200) with 60416K/5120K bytes of memory
+
+Readonly ROMMON initialized
+
+Self decompressing the image :
+######################### [OK]
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco Internetwork Operating System Software
+IOS (tm) PT1000 Software (PT1000-I-M), Version 12.2(28), RELEASE SOFTWARE (fc5)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2005 by cisco Systems, Inc.
+Compiled Wed 27-Apr-04 19:01 by miwang
+
+PT 1001 (PTSC2005) processor (revision 0x200) with 60416K/5120K bytes of memory
+.
+Processor board ID PT0123 (0123)
+PT2005 processor: part number 0, mask 01
+Bridging software.
+X.25 software, Version 3.0.0.
+4 FastEthernet/IEEE 802.3 interface(s)
+2 Low-speed serial(sync/async) network interface(s)
+32K bytes of non-volatile configuration memory.
+63488K bytes of ATA CompactFlash (Read/Write)
+
+Press RETURN to get started!
+
+
+
+Router>enable
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface fa1/0
+Router(config-if)#ip helper-address 10.10.40.1
+Router(config-if)#exit
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface FastEthernet1/0
+Router(config-if)#ip address  
+% Incomplete command.
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface FastEthernet0/0
+Router(config-if)#ip address 10.10.50.1 255.0.0.0
+Router(config-if)#ip address 10.10.50.1 255.255.255.0
+Router(config-if)#ip address 10.10.50.1 255.255.255.0
+Router(config-if)#exit
+Router(config)#interface fa1/0
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface FastEthernet1/0
+Router(config-if)#no ip address
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface FastEthernet0/0
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface FastEthernet1/0
+Router(config-if)#ip address 10.10.60.1 255.255.255.0
+Router(config-if)#ip address 10.10.60.1 255.255.255.0
+Router(config-if)#exit
+Router(config)#ip helper-address 10.10.60.1
+                   ^
+% Invalid input detected at '^' marker.
+	
+Router(config)#interface fa1/0
+Router(config-if)#ip helper-address 10.10.60.1
+Router(config-if)#exit
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#enable
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface fa1/0
+Router(config-if)#ip address 10.10.60.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet1/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet1/0, changed state to up
+
+Router(config-if)#copy running-config startup-config
+                   ^
+% Invalid input detected at '^' marker.
+	
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+STORM
+
+Self decompressing the image :
+######################### [OK]
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco Internetwork Operating System Software
+IOS (tm) PT1000 Software (PT1000-I-M), Version 12.2(28), RELEASE SOFTWARE (fc5)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2005 by cisco Systems, Inc.
+Compiled Wed 27-Apr-04 19:01 by miwang
+
+PT 1001 (PTSC2005) processor (revision 0x200) with 60416K/5120K bytes of memory
+.
+Processor board ID PT0123 (0123)
+PT2005 processor: part number 0, mask 01
+Bridging software.
+X.25 software, Version 3.0.0.
+4 FastEthernet/IEEE 802.3 interface(s)
+2 Low-speed serial(sync/async) network interface(s)
+32K bytes of non-volatile configuration memory.
+63488K bytes of ATA CompactFlash (Read/Write)
+
+Press RETURN to get started!
+
+
+
+Router>enable
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#
+Router(config)#ip helper-address 20.40.0.1
+                   ^
+% Invalid input detected at '^' marker.
+	
+Router(config)#interface fa1/0
+Router(config-if)#ip helper-address 20.40.0.1
+Router(config-if)#exit
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface fa1/0
+Router(config-if)#ip address 20.40.0.1
+% Incomplete command.
+Router(config-if)#ip address 20.40.0.1 255.255.0.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet1/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet1/0, changed state to up
+
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     20.0.0.0/16 is subnetted, 1 subnets
+C       20.40.0.0 is directly connected, FastEthernet1/0
+
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router rip
+Router(config-router)#network 20.0.0.0
+Router(config-router)#
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router>enable
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface Serial2/0
+Router(config-if)#ip address 10.10.30.1 255.0.0.0
+Router(config-if)#ip address 10.10.30.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface Serial2/0, changed state to up
+
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial2/0, changed state to up
+
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/24 is subnetted, 1 subnets
+C       10.10.30.0 is directly connected, Serial2/0
+     20.0.0.0/16 is subnetted, 1 subnets
+C       20.40.0.0 is directly connected, FastEthernet1/0
+
+Router#sonf t
+            ^
+% Invalid input detected at '^' marker.
+	
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface fa1/0
+Router(config-if)#ip helper-address 20.40.0.1
+Router(config-if)#exit
+Router(config)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface Serial3/0
+Router(config-if)#ip address 10.10.10.2 255.255.255.0
+Router(config-if)#ip address 10.10.10.2 255.255.255.0
+Router(config-if)#no shutdown
+
+%LINK-5-CHANGED: Interface Serial3/0, changed state to down
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+%LINK-5-CHANGED: Interface Serial3/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial3/0, changed state to up
+
+REACH
+
+System Bootstrap, Version 12.1(3r)T2, RELEASE SOFTWARE (fc1)
+Copyright (c) 2000 by cisco Systems, Inc.
+PT 1001 (PTSC2005) processor (revision 0x200) with 60416K/5120K bytes of memory
+
+Readonly ROMMON initialized
+
+Self decompressing the image :
+######################### [OK]
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco Internetwork Operating System Software
+IOS (tm) PT1000 Software (PT1000-I-M), Version 12.2(28), RELEASE SOFTWARE (fc5)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2005 by cisco Systems, Inc.
+Compiled Wed 27-Apr-04 19:01 by miwang
+
+PT 1001 (PTSC2005) processor (revision 0x200) with 60416K/5120K bytes of memory
+.
+Processor board ID PT0123 (0123)
+PT2005 processor: part number 0, mask 01
+Bridging software.
+X.25 software, Version 3.0.0.
+4 FastEthernet/IEEE 802.3 interface(s)
+2 Low-speed serial(sync/async) network interface(s)
+32K bytes of non-volatile configuration memory.
+63488K bytes of ATA CompactFlash (Read/Write)
+
+Press RETURN to get started!
+
+
+
+Router>enable
+Router#
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface FastEthernet0/0
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface FastEthernet1/0
+Router(config-if)#ip address 20.30.0.1 255.0.0.0
+Router(config-if)#ip address 20.30.0.1 255.255.0.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet1/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet1/0, changed state to up
+
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+STORMLANDS
+
+Router>enable
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#no ato
+Router(config-router)#no auto
+Router(config-router)#no auto-summary 
+Router(config-router)#network 10.10.10.0
+Router(config-router)#network 10.10.30.0
+Router(config-router)#network 20.40.0.0
+Router(config-router)#pa
+Router(config-router)#passive-interface fa
+Router(config-router)#passive-interface fastEthernet 1/0
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy
+Router#copy run
+Router#copy running-config st
+Router#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+
+VALE(RIP)
+
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router rip
+Router(config-router)#netwrok 20.50.0.0
+                          ^
+% Invalid input detected at '^' marker.
+	
+Router(config-router)#network 20.50.0.0
+Router(config-router)#network 10.10.30.0
+Router(config-router)#network 10.10.40.0
+Router(config-router)#passive
+Router(config-router)#passive-interface se
+Router(config-router)#passive-interface serial 2/0
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy 
+Router#copy run
+Router#copy running-config st
+Router#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+
+
+VALE(configuring mountain)
+
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int
+Router(config)#interface fa
+Router(config)#interface fastEthernet 1/0
+Router(config-if)#ip a
+Router(config-if)#ip ad
+Router(config-if)#ip address 10.10.50.2 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet1/0, changed state to up
+
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy ru
+Router#copy running-config st
+Router#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+
+MOUNTAIN(routing vale)
+
+
+Router>enable
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#interface fa
+Router(config)#interface fastEthernet 0/0
+Router(config-if)#network 10.10.50.1 255.255.255.0
+                   ^
+% Invalid input detected at '^' marker.
+	
+Router(config-if)#ip address 10.10.50.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy run
+Router#copy running-config st
+Router#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+
+vALE(rip for mountain)
+
+Router#
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#no auto
+Router(config-router)#no auto-summary 
+Router(config-router)#network 10.10.50.0
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy eun
+Router#copy eun
+Router#copy run
+Router#copy running-config st
+Router#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+
+NORTH(config mountain)
+
+Router>enable
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int
+Router(config)#interface se
+Router(config)#interface serial 3/0
+Router(config-if)#ip address 10.10.60.2 255.255.255.0
+Router(config-if)#no shutdown
+
+%LINK-5-CHANGED: Interface Serial3/0, changed state to down
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy run
+Router#copy running-config 
+% Incomplete command.
+Router#copy running-config st
+Router#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+
+MOUNTAIN(config north)
+
+Router#
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int
+Router(config)#interface se
+Router(config)#interface serial 3/0
+Router(config-if)#ip address 10.10.60.1 255.255.255.0
+
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy run
+Router#copy running-config 
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial3/0, changed state to up
+
+% Incomplete command.
+Router#copy running-config st
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+
+Router(config)#interface fa
+Router(config)#interface fastEthernet 1/0
+Router(config-if)#ip address 10.10.70.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy run
+Router#copy running-config st
+Router#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+
+
+MOUNTAIN RIP
+
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#no auto
+Router(config-router)#no auto-summary 
+Router(config-router)#network 10.10.60.0
+Router(config-router)#network 10.10.50.1
+Router(config-router)#network 10.10.70.1
+Router(config-router)#passive
+Router(config-router)#passive-interface  fa
+Router(config-router)#passive-interface  fastEthernet 1/0
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy rum
+Router#copy run
+Router#copy running-config st
+Router#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+
+STORMLAND HOST DHCP RELaY
+
+Router>enable
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int
+Router(config)#interface fa
+Router(config)#interface fastEthernet 1/0
+Router(config-if)#ip hel
+Router(config-if)#ip helper-address 10.10.30.2
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy 
+Router#copy run
+Router#copy running-config st
+Router#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+
+REACH RIP
+
+Router>enable
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip address 10.10.20.2 255.255.255.0
+                   ^
+% Invalid input detected at '^' marker.
+	
+Router(config)#int
+Router(config)#interface fa
+Router(config)#interface fastEthernet 0/0
+Router(config-if)#ip address 10.10.20.2 255.255.255.0
+Router(config-if)#no shut down
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+Router(config-if)#copy sun 
+Router(config-if)#copy run
+Router(config-if)#copy run config
+Router(config-if)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy run
+Router#copy running-config st
+Router#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#no au
+Router(config-router)#no auto-summary 
+Router(config-router)#network 10.10.20.0
+Router(config-router)#network 20.30.0.0
+Router(config-router)#passive
+Router(config-router)#passive-interface fa
+Router(config-router)#passive-interface fastEthernet 1/0
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy
+Router#copy run
+Router#copy running-config st
+Router#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/24 is subnetted, 3 subnets
+R       10.10.10.0 [120/1] via 10.10.20.1, 00:00:25, FastEthernet0/0
+C       10.10.20.0 is directly connected, FastEthernet0/0
+R       10.10.30.0 [120/1] via 10.10.20.1, 00:00:25, FastEthernet0/0
+     20.0.0.0/16 is subnetted, 3 subnets
+R       20.20.0.0 [120/2] via 10.10.20.1, 00:00:25, FastEthernet0/0
+C       20.30.0.0 is directly connected, FastEthernet1/0
+R       20.40.0.0 [120/1] via 10.10.20.1, 00:00:25, FastEthernet0/0
+
+Router#
+
+STORM RIP TO REACH
+
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#no au
+Router(config-router)#no auto-summary 
+Router(config-router)#network 10.10.20.0
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy run 
+Router#copy run 
+Router#copy running-config st
+Router#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+
+STATIC IN NORTH
+
+outer#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip route 20.40.0.0 255.255.0.0 10.10.10.2
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/24 is subnetted, 3 subnets
+C       10.10.40.0 is directly connected, Serial2/0
+C       10.10.60.0 is directly connected, Serial3/0
+S       10.10.70.0 [1/0] via 10.10.60.1
+     20.0.0.0/16 is subnetted, 1 subnets
+S       20.50.0.0 [1/0] via 10.10.40.1
+C    192.168.0.0/16 is directly connected, FastEthernet1/0
+C    200.168.0.0/24 is directly connected, FastEthernet0/0
+
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip route 20.40.0.0 255.255.0.0 10.10.30.1
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/24 is subnetted, 3 subnets
+C       10.10.40.0 is directly connected, Serial2/0
+C       10.10.60.0 is directly connected, Serial3/0
+S       10.10.70.0 [1/0] via 10.10.60.1
+     20.0.0.0/16 is subnetted, 1 subnets
+S       20.50.0.0 [1/0] via 10.10.40.1
+C    192.168.0.0/16 is directly connected, FastEthernet1/0
+C    200.168.0.0/24 is directly connected, FastEthernet0/0
+
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip route 20.20.0.0 255.255.0.0 10.10.10.1
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/24 is subnetted, 3 subnets
+C       10.10.40.0 is directly connected, Serial2/0
+C       10.10.60.0 is directly connected, Serial3/0
+S       10.10.70.0 [1/0] via 10.10.60.1
+     20.0.0.0/16 is subnetted, 1 subnets
+S       20.50.0.0 [1/0] via 10.10.40.1
+C    192.168.0.0/16 is directly connected, FastEthernet1/0
+C    200.168.0.0/24 is directly connected, FastEthernet0/0
+
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip route 20.40.0.0 255.255.0.0 10.10.40.1
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/24 is subnetted, 3 subnets
+C       10.10.40.0 is directly connected, Serial2/0
+C       10.10.60.0 is directly connected, Serial3/0
+S       10.10.70.0 [1/0] via 10.10.60.1
+     20.0.0.0/16 is subnetted, 2 subnets
+S       20.40.0.0 [1/0] via 10.10.40.1
+S       20.50.0.0 [1/0] via 10.10.40.1
+C    192.168.0.0/16 is directly connected, FastEthernet1/0
+C    200.168.0.0/24 is directly connected, FastEthernet0/0
+
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip route 20.20.0.0 255.255.0.0 10.10.40.1
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/24 is subnetted, 3 subnets
+C       10.10.40.0 is directly connected, Serial2/0
+C       10.10.60.0 is directly connected, Serial3/0
+S       10.10.70.0 [1/0] via 10.10.60.1
+     20.0.0.0/16 is subnetted, 3 subnets
+S       20.20.0.0 [1/0] via 10.10.40.1
+S       20.40.0.0 [1/0] via 10.10.40.1
+S       20.50.0.0 [1/0] via 10.10.40.1
+C    192.168.0.0/16 is directly connected, FastEthernet1/0
+C    200.168.0.0/24 is directly connected, FastEthernet0/0
+
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip route 20.30.0.0 255.255.0.0 10.10.40.1
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     10.0.0.0/24 is subnetted, 3 subnets
+C       10.10.40.0 is directly connected, Serial2/0
+C       10.10.60.0 is directly connected, Serial3/0
+S       10.10.70.0 [1/0] via 10.10.60.1
+     20.0.0.0/16 is subnetted, 4 subnets
+S       20.20.0.0 [1/0] via 10.10.40.1
+S       20.30.0.0 [1/0] via 10.10.40.1
+S       20.40.0.0 [1/0] via 10.10.40.1
+S       20.50.0.0 [1/0] via 10.10.40.1
+C    192.168.0.0/16 is directly connected, FastEthernet1/0
+C    200.168.0.0/24 is directly connected, FastEthernet0/0
+
+Router#
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
